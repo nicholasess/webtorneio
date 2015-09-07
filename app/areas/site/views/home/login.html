@@ -1,0 +1,48 @@
+﻿<br />
+<div class="panel panel-default col-md-offset-2 col-md-6 animated flipInY">
+    <div class="panel-heading text-center">
+        <img src="app/content/img/logo_big.png" class="img-responsive" />
+    </div>
+    <div class="panel-body">
+        <form name="login_form" ng-submit="vm.submit()" novalidate>
+            <div class="form-group">
+                <label style="font-size:14px" for="email">E-mail</label>
+                <input type="email"
+                       class="form-control input-lg"
+                       placeholder="E-mail"
+                       name="email"
+                       ng-model="vm.login.email"
+                       ng-minlength=3
+                       ng-maxlength=100
+                       required,
+                       ng-disabled="isPageBusy" />
+            </div>
+            <div class="form-group">
+                <label for="password" style="font-size:14px">Senha</label>
+                <input type="password"
+                       class="form-control input-lg"
+                       placeholder="Senha"
+                       name="password"
+                       ng-model="vm.login.password"
+                       ng-minlength=1
+                       ng-maxlength=8
+                       required
+                       ng-disabled="isPageBusy" />
+            </div>
+
+            <div style="padding-top:10px;padding-bottom:10px;margin:auto auto;text-align:center;width:100%" ng-show="isPageBusy">
+                <img src="app/content/img/loading.gif">
+            </div>
+            <div ng-hide="isPageBusy">
+                <br />
+                <p class="text-center">
+                    <button type="submit" ng-disabled="login_form.$invalid" class="btn btn-lg btn-primary">Entrar</button>
+                    <a href="#" class="btn btn-lg btn-default">Ativar cadastro</a>
+                </p>
+                <p class="text-right">
+                    <a href="#">Esqueci minha senha</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

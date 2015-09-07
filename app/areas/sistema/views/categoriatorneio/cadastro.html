@@ -1,0 +1,107 @@
+<form ng-submit="cadastro(torneio)">
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de torneios</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+            <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Categoria</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="form.CategoriaId" ng-change="selectCate(form.CategoriaId)" ng-options="categoria.id as categoria.descricao for categoria in categorias"></select>
+                        </div>
+                    </div>
+             </div>
+             </div>
+            <div class="row-fluid">
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label">Peso Inicial</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="form.PesoInicial" name="Nome" type="text"  />
+                        </div>
+                    </div>
+             </div>
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label" >Peso Final</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="form.PesoFinal" name="Nome" type="text"  />
+                        </div>
+                    </div>
+             </div>
+           <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label">Idade Inicial</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="form.IdadeInicial" name="Nome" type="text"  />
+                        </div>
+                    </div>
+             </div>
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label" >Idade Final</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="form.IdadeFinal" name="Nome" type="text"  />
+                        </div>
+                    </div>
+             </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" >Divisão</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="form.Divisao"  name="Nome" type="text"  />
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" >Descrição</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="form.Descricao"  name="Nome" type="text"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Endereco">Classe</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="form.Classe" id="Endereco" name="Endereco" type="text"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Telefone">Referência</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase"  ng-model="torneio.Referencia" id="Telefone" name="Telefone" type="text"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                        <a href="#/torneio" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

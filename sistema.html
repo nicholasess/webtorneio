@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app" data-ng-ap data-ng-controller="AppCtrl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="André Carrilho">
+    <title>WebTorneio - {{ title }}</title>
+    <link rel="shortcut icon" href="appsistema/content/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/app/content/img/favicon.ico" type="image/x-icon">
+    <link href="app/content/css/sistema/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/content/css/sistema/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
+	<link href="app/content/assets/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="app/content/css/sistema/style.css" rel="stylesheet" />
+    <link href="app/content/css/sistema/style-responsive.css" rel="stylesheet" />
+    <link href="app/content/css/sistema/style-default.css" rel="stylesheet" />
+    <script src="app/content/js/metrolab/modernizr-2.6.2.js"></script>
+    <link href="app/content/css/Datepicker.css" rel="stylesheet" />
+</head>
+<body class="fixed-top">
+    <div id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="sidebar-toggle-box hidden-phone">
+                    <div class="fa fa-list fa-4x icon-reorder"></div>
+                </div>
+                <a class="brand" href="sistema.html#/">
+                    <img src="app/content/img/logo.png" alt="WebTorneio" />
+                </a>
+                <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="arrow"></span>
+                </a>
+                <div class="top-nav ">
+                    <ul class="nav pull-right top-menu">
+                        <li class="dropdown mtop5">
+                            <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Ajuda">
+                                <i class="fa fa-headphones"></i>
+                            </a>
+                        </li>
+                        <!-- END SUPPORT -->
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="app/content/img/avatar1_small.jpg" alt="">
+                                <span class="username">{{user.nome}}</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <li><a href="#"><i class="fa fa-user"></i> Minha Conta</a></li>
+                                <li><a href="#"><i class="fa fa-cog"></i> Configurações</a></li>
+                                <li><a href="" data-ng-click="logout()"><i class="fa fa-key"></i> Sair</a></li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+            </div>
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <div id="container" class="row-fluid">
+        <!-- BEGIN SIDEBAR -->
+        <div class="sidebar-scroll">
+            <div id="sidebar" class="nav-collapse collapse">
+                <!-- END RESPONSIVE QUICK SEARCH FORM -->
+                <!-- BEGIN SIDEBAR MENU -->
+                <ul class="sidebar-menu">
+                    <li class="sub-menu active">
+                        <a class="" href="sistema.html#/">
+                            <i class="fa fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="" class="">
+                            <i class="fa fa-group"></i>
+                            <span>Academias</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="sistema.html#/academia">Academias</a></li>
+                            <li><a class="" href="sistema.html#/atletaacademia">Atletas</a></li>
+                            <li><a class="" href="sistema.html#/atleta">Atletas inativos</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="" class="">
+                            <i class="fa fa-trophy"></i>
+                            <span>Torneios</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="sistema.html#/torneio">Torneios</a></li>
+                            <li><a class="" href="sistema.html#/categoriatorneio">Categorias</a></li>
+                            <li><a class="" href="sistema.html#/organizadortorneio">Organizadores</a></li>
+                            <li><a class="" href="sistema.html#/academiatorneio">Academias</a></li>
+                            <li><a class="" href="sistema.html#/inscricao">Inscrições</a></li>
+                            <li><a class="" href="sistema.html#/valorinscricao">Valores das Inscrições</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="sistema.html#/categoria" class="">
+                            <i class="fa fa-list"></i>
+                            <span>Categorias</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="sistema.html#/classe" class="">
+                            <i class="fa fa-list"></i>
+                            <span>Classes</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="sistema.html#/divisao" class="">
+                            <i class="fa fa-list"></i>
+                            <span>Divisões</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="sistema.html#/graduacao" class="">
+                            <i class="fa fa-list"></i>
+                            <span>Graduações</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="" class="">
+                            <i class="fa fa-trophy"></i>
+                            <span>Cadastros básicos</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="sistema.html#/continente">Continentes</a></li>
+                            <li><a class="" href="sistema.html#/pais">Países</a></li>
+                            <li><a class="" href="sistema.html#/estado">Estados</a></li>
+                            <li><a class="" href="sistema.html#/cidade">Cidades</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE -->
+        <div id="main-content">
+            <div class="container-fluid">
+                <div class="loading" data-ng-show="isPageBusy">
+                    <img class="loading_gif" src="app/content/img/loading.gif" alt="Carregando...">
+                </div>
+                <div data-ng-view data-ng-hide="isPageBusy"></div>
+            </div>
+            <!-- END PAGE -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div id="footer">
+            2015 &copy; WebTorneio Painel.
+        </div>
+    </div>
+
+    <script src="app/content/js/jquery/jquery-2.1.1.min.js"></script>
+    <!--<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>-->
+    <script src="app/content/js/bootstrap/bootstrap-s.min.js"></script>
+    <script src="app/content/js/nicescroll/nicescroll.js"></script><!--//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.0/jquery.nicescroll.min.js-->
+    <script src="app/content/js/start/common-scripts.js"></script>
+    <script src="app/content/js/toastr/toastr.min.js"></script>
+    <script src="app/content/js/start/startup.js"></script>
+    <script src="app/content/js/angular/angular.min.js"></script>
+    <script src="app/content/js/angular/angular-route.min.js"></script>
+    <script src="app/content/js/angular-ui/ui-bootstrap-tpls.min.js"></script>
+ 
+    <script src="app/app.sistema.js"></script>
+    <script src="app/areas/sistema/sistema.routes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_pt-br.js"></script>
+
+    <script src="app/bower_components/angular-input-masks/angular-input-masks-dependencies.js"></script>
+    <script src="app/bower_components/angular-input-masks/angular-input-masks.br.js"></script>-->
+    <!-- CONTROLLERS -->
+    <script src="app/areas/sistema/controllers/HomeCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/academia.index.js"></script>
+    <script src="app/areas/sistema/controllers/academia.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/academia.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/academia.torneio.index.js"></script>
+    <script src="app/areas/sistema/controllers/academia.torneio.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/academia.torneio.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/atletaacademia.index.js"></script>
+    <script src="app/areas/sistema/controllers/atletaacademia.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/atletaacademia.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.index.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.torneio.index.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.torneio.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/categoria.torneio.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/cidade.index.js"></script>
+    <script src="app/areas/sistema/controllers/cidade.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/cidade.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/classe.index.js"></script>
+    <script src="app/areas/sistema/controllers/classe.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/classe.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/ConfiguracaoCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/continente.index.js"></script>
+    <script src="app/areas/sistema/controllers/continente.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/continente.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/divisao.index.js"></script>
+    <script src="app/areas/sistema/controllers/divisao.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/divisao.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/estado.index.js"></script>
+    <script src="app/areas/sistema/controllers/estado.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/estado.edicao.js"></script>
+        <script src="app/areas/sistema/controllers/graduacao.index.js"></script>
+    <script src="app/areas/sistema/controllers/graduacao.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/graduacao.edicao.js"></script>
+	    <script src="app/areas/sistema/controllers/inscricao.index.js"></script>
+    <script src="app/areas/sistema/controllers/inscricao.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/inscricao.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/organizador.torneio.index.js"></script>
+    <script src="app/areas/sistema/controllers/organizador.torneio.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/organizador.torneio.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/pais.index.js"></script>
+    <script src="app/areas/sistema/controllers/pais.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/pais.edicao.js"></script>
+    <script src="app/areas/sistema/controllers/PessoaCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/PremiacaoCategoriaCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/PremiacaoCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/torneio.index.js"></script>
+    <script src="app/areas/sistema/controllers/torneio.cadastro.js"></script>
+    <script src="app/areas/sistema/controllers/UsuarioCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/ValorInscricaoCtrl.js"></script>
+    <script src="app/areas/sistema/controllers/ValorPremiacaoCtrl.js"></script>
+    <!-- SERVICES -->
+    <script src="app/areas/sistema/services/HomeService.js"></script>
+    <script src="app/areas/sistema/services/AcademiaService.js"></script>
+    <script src="app/areas/sistema/services/AcademiaTorneioService.js"></script>
+    <script src="app/areas/sistema/services/AtletaAcademiaService.js"></script>
+    <script src="app/areas/sistema/services/AtletaService.js"></script>
+    <script src="app/areas/sistema/services/CategoriaService.js"></script>
+    <script src="app/areas/sistema/services/CategoriaTorneioService.js"></script>
+    <script src="app/areas/sistema/services/CidadeService.js"></script>
+    <script src="app/areas/sistema/services/ClasseService.js"></script>
+    <script src="app/areas/sistema/services/ConfiguracaoService.js"></script>
+    <script src="app/areas/sistema/services/ContinenteService.js"></script>
+    <script src="app/areas/sistema/services/DivisaoService.js"></script>
+    <script src="app/areas/sistema/services/EstadoService.js"></script>
+    <script src="app/areas/sistema/services/GraduacaoService.js"></script>
+    <script src="app/areas/sistema/services/InscricaoService.js"></script>
+    <script src="app/areas/sistema/services/OrganizadorTorneioService.js"></script>
+    <script src="app/areas/sistema/services/PaisService.js"></script>
+    <script src="app/areas/sistema/services/PessoaService.js"></script>
+    <script src="app/areas/sistema/services/PremiacaoCategoriaService.js"></script>
+    <script src="app/areas/sistema/services/PremiacaoService.js"></script>
+    <script src="app/areas/sistema/services/TorneioService.js"></script>
+    <script src="app/areas/sistema/services/UsuarioService.js"></script>
+    <script src="app/areas/sistema/services/ValorInscricaoService.js"></script>
+    <script src="app/areas/sistema/services/ValorPremiacaoService.js"></script>
+</body>
+</html>
+

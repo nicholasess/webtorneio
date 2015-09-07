@@ -1,0 +1,46 @@
+<div class="row-fluid">
+    <div class="span12">
+           <form class="form-vertical" ng-submit="cadastro(ot)" novalidate>
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de Organizadores do Torneio</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label">Torneio</label>
+                        <div class="controls controls-row">
+                            <select class="input-block-level text-uppercase" ng-model="ot.TorneioId" ng-options="continente.id as continente.nome for continente in continentes"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <label class="control-group" >Responsável</label>
+                        <select class="input-block-level text-uppercase" ng-model="ot.ResAcaId" ng-options="continente.id as continente.nome for continente in continentes"></select>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                        <a href="#/pais" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

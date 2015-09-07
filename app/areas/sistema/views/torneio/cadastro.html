@@ -1,0 +1,157 @@
+<form ng-submit="cadastro(torneio)">
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de torneios</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label">Inscrição Inicial</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="torneio.InscInicial" name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+             </div>
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label" >Inscrição Final</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="torneio.InscFinal" name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+             </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" >Local</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="torneio.Local"  name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" >Descrição</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="torneio.Descricao"  name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Endereco">Endereço</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="torneio.Endereco" id="Endereco" name="Endereco" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span1">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Numero">Número</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="torneio.Numero" id="Numero" name="Numero" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Bairro">Bairro</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="torneio.Bairro" id="Bairro" name="Bairro" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Complemento">Complemento</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="torneio.Complemento" id="Complemento" name="Complemento" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">País</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="torneio.PaisId" ng-change="mudaPais(torneio.PaisId)" ng-options="pais.id as pais.nome for pais in paises"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Estado</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="torneio.EstadoId" ng-change="mudaEstado(torneio.EstadoId)" ng-options="estado.id as estado.sigla for estado in estados"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Cidade</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="torneio.CidadeId" ng-options="cidade.id as cidade.nome for cidade in cidades"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Telefone">Referência</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase"  ng-model="torneio.Referencia" id="Telefone" name="Telefone" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Celular">Status</label>
+                        <div class="controls controls-row">
+                            <select class="input-block-level" ng-model="torneio.Status" ng-options="item.id as item.descricao for item in status"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Celular">Aberto</label>
+                        <div class="controls controls-row">
+                            <select class="input-block-level" ng-model="torneio.Aberto" ng-options="item.id as item.descricao for item in aberto"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Celular">Sem Taxa</label>
+                        <div class="controls controls-row">
+                            <select class="input-block-level" ng-model="torneio.SemTaxa" ng-options="item.id as item.descricao for item in taxa"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                        <a href="#/torneio" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

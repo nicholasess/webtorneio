@@ -1,0 +1,54 @@
+<div class="row-fluid">
+    <div class="span12">
+           <form class="form-vertical" ng-submit="cadastro(pais)" novalidate>
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de Paises</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label" for="Nome">Nome</label>
+                        <div class="controls controls-row">
+                            <input ng-model="pais.Nome" class="input-block-level text-uppercase" id="Nome" name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <label class="control-group" for="continente">Continente</label>
+                        <select class="input-block-level text-uppercase" ng-model="pais.ContinenteId" ng-options="continente.id as continente.nome for continente in continentes"></select>
+                    </div>
+                </div>
+            </div>
+             <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <label class="control-group" for="continente">Área</label>
+                        <input class="input-block-level text-uppercase" ng-model="pais.CodigoArea" ng-pattern="onlyNumbers" />
+                    </div>
+                </div>
+            </div>
+            <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                        <a href="#/pais" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

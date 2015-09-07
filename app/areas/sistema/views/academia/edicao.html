@@ -1,0 +1,160 @@
+<form ng-submit="cadastro(academia)">
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Editar Academia {{academia.Nome}}</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+               <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="NomeImg">Logo</label>
+                        <div class="controls controls-row">
+                            <img id="imgPreview" src="/Content/Uploads/foto_default_a.jpg" class="img-thumbnail" width="80" height="30" />
+                            <input class="input-block-level" type="file" id="CaminhoImg" name="CaminhoImg" onchange="imagepreview(this);" />
+                        </div>
+                    </div>
+                </div> 
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label" for="Nome">Nome</label>
+                        <div class="controls controls-row">
+                            <input ng-model="academia.Nome" class="input-block-level text-uppercase" id="Nome" name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Endereco">Endereço</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="academia.Endereco" id="Endereco" name="Endereco" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span1">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Numero">Número</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="academia.Numero" id="Numero" name="Numero" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Bairro">Bairro</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="academia.Bairro" id="Bairro" name="Bairro" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Complemento">Complemento</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="academia.Complemento" id="Complemento" name="Complemento" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">País</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="academia.PaisId" ng-change="mudaPais(academia.PaisId)" ng-options="pais.id as pais.nome for pais in paises"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Estado</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="academia.EstadoId" ng-change="mudaEstado(academia.EstadoId)" ng-options="estado.id as estado.sigla for estado in estados"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Cidade</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="academia.CidadeId" ng-options="cidade.id as cidade.nome for cidade in cidades"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Telefone">Telefone Fixo</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ui-br-phone-number ng-model="academia.Telefone" id="Telefone" name="Telefone" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Celular">Celular</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ui-br-phone-number ng-model="academia.Celular" id="Celular" name="Celular" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Email">Email</label>
+                        <div class="controls controls-row">
+
+                            <input class="input-block-level" ng-model="academia.Email" type="text" value="" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Site">Site</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level" ng-model="academia.Site" id="Site" name="Site" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Facebook">Facebook</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level" ng-model="academia.Facebook" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Twitter">Twitter</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level" ng-model="academia.Twitter" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Atualizar</button>
+                        <a href="#/academia" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

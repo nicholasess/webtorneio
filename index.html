@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" ng-controller="AppCtrl">
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>WebTorneio - {{ title }}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="icon" href="/app/content/img/favicon.ico" type="image/x-icon">
+    <link href="app/content/css/bootstrap/bootstrap-yeti.min.css" rel="stylesheet" />
+    <link href="app/content/css/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+    <script src="app/content/js/jquery/jquery-2.1.1.min.js"></script>
+    <script src="app/content/js/toastr/toastr.min.js"></script>
+    <script src="app/content/js/angular/angular.min.js"></script>
+    <script src="app/content/js/angular/angular-route.min.js"></script>
+    <script src="app/app.site.js"></script>
+    <script src="app/areas/site/site.routes.js"></script>
+    <script src="app/areas/site/controllers/LoginCtrl.js"></script>
+    <script src="app/areas/sistema/services/UsuarioService.js"></script>
+</body>
+</html>

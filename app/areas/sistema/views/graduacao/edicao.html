@@ -1,0 +1,36 @@
+<div class="row-fluid">
+    <div class="span12">
+    <form class="form-vertical" ng-submit="cadastro(graduacao)" novalidate>
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de Graduações</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label" for="Nome">Nome</label>
+                        <div class="controls controls-row">
+                            <input ng-model="graduacao.Nome" class="input-block-level text-uppercase" id="Nome" name="Nome" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="messageError" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">{{messageError}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Atualizar</button>
+                        <a href="#/graduacao" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

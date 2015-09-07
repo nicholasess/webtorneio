@@ -1,0 +1,123 @@
+<form ng-submit="cadastro(torneio)">
+    <div class="row-fluid">
+                <div class="span12">
+        <h3 class="page-title ">Cadastro de Inscrição</h3>
+    </div>
+    </div>
+            <div class="row-fluid">
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label">Atleta</label>
+                        <div class="controls controls-row">
+                            <input  class="input-block-level text-uppercase" ng-model="inscricao.AtletaAcaId" type="text" />
+                        </div>
+                    </div>
+             </div>
+             <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label" >Data</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="inscricao.Data"type="text"/>
+                        </div>
+                    </div>
+             </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" >Categoria</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="inscricao.CategoriaId" ng-change="mudaCategoria(categoria.CategoriaId)" ng-options="categoria.id as categoria.descricao for categoria in categorias"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">Status</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="inscricao.Status" ng-change="mudaStatus(inscricao.Status)" ng-options="item.id as item.descricao for item in status"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Endereco">Responsável Academia</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="inscricao.ResponsavelAcaId" ng-change="mudaResponsavel(inscricao.ResponsavelAcaId)" ng-options="item.id as item.descricao for item in responsavelacaid"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span1">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Numero">Torneio</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="inscricao.TorneioId" ng-change="mudaTorneio(inscricao.TorneioId)" ng-options="item.id as item.descricao for item in torneios"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Bairro">Atleta Pagou</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="inscricao.AtletaPagou" type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Complemento">Responsável Pagou</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="inscricao.ResponsavelPagou" type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Peso do Atleta</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase" ng-model="inscricao.PesoAtleta" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2">Graduação</label>
+                        <div class="controls controls-row">
+                            <select required="required" class="input-block-level" ng-model="inscricao.GraduacaoId" ng-options="item.id as item.descricao for item in graduacoes"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label class="control-label col-md-2" for="Telefone">Número</label>
+                        <div class="controls controls-row">
+                            <input class="input-block-level text-uppercase"  ng-model="inscricao.numero" type="text"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div ng-if="errors.length > 0" class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <div class="alert alert-danger">
+                            <li ng-repeat="item in errors">{{item}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="control-group">
+                        <button class="control-group btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                        <a href="#/torneio" class="btn">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
