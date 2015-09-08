@@ -2,8 +2,9 @@
     'use strict';
 
     angular.module('app', ['ngRoute'
-        , 'ui.bootstrap', 
-       'ui.utils.masks'
+        , 'ui.bootstrap',
+       'ui.utils.masks',
+       'ngFileUpload'
     ]);
 
     angular.module('app').controller('AppCtrl', function AppCtrl($scope, $http) {
@@ -12,11 +13,11 @@
     });
 
     angular.module('app').constant('APP_SETTINGS', {
-        "SERVICE_URL": "http://localhost:25949/"
-        //"SERVICE_URL": "http://200.98.146.173/"
+        // "SERVICE_URL": "http://localhost:25949/"
+        "SERVICE_URL": "http://200.98.146.173/"
     });
-	
-	
+
+
 	angular.module('app').directive('ngConfirmClick', [
         function(){
             return {

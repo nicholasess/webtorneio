@@ -27,6 +27,10 @@
         Twitter: ""
       }
 
+      $scope.$watch('NomeImg', function(){
+         $scope.academia.NomeImg = $scope.NomeImg;
+      })
+
       $scope.cadastro = function(item){
          var status = true;
          var numberRegex = /^\d+$/;
@@ -36,7 +40,6 @@
         if($scope.academia.Nome == ""){
           $scope.errors.push('Campo Nome está vázio');
           status = false;
-          console.log(AcademiaService)
         }
 
         if (!numberRegex.test($scope.academia.Telefone)) {
@@ -61,6 +64,11 @@
           status = false;
         }
 
+        if($scope.academia.NomeImg == ""){
+          $scope.errors.push('Selecione uma imagem');
+          status = false;
+        }
+
         if($scope.academia.PaisId == ""){
           $scope.errors.push('Campo Pais não está selecionado');
           status = false;
@@ -77,12 +85,7 @@
         }
 
         if(status){
-          AcademiaService.Cadastrar(item).then(function(item){
-            $location.path('/academia');
-          }, function (item) {
-              $scope.errors = [];
-              $scope.errors.push(item.data);
-          })
+           AcademiaService.Upload(item, item.NomeImg);
         }
 
       }
