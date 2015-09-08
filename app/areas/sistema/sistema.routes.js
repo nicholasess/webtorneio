@@ -25,14 +25,20 @@
            authorize: true
        })
        .when('/academiatorneio', {
-           controller: 'AcademiaTorneioCtrl',
+           controller: 'academia.torneio.index',
            templateUrl: 'app/areas/sistema/views/academiatorneio/index.html',
            controllerAs: 'vm',
            authorize: true
        })
        .when('/academiatorneio/cadastro', {
-           controller: 'AcademiaTorneioCtrl',
+           controller: 'academia.torneio.cadastro',
            templateUrl: 'app/areas/sistema/views/academiatorneio/cadastro.html',
+           controllerAs: 'vm',
+           authorize: true
+       })
+       .when('/academiatorneio/edicao/:id', {
+           controller: 'academia.torneio.edicao',
+           templateUrl: 'app/areas/sistema/views/academiatorneio/edicao.html',
            controllerAs: 'vm',
            authorize: true
        })
